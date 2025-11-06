@@ -1,0 +1,365 @@
+/* =====================================================================
+   0. CONFIGURACIÓN GLOBAL Y VARIABLES CSS
+===================================================================== */
+
+:root {
+    /* Paleta de Colores Profesional */
+    --color-main-blue: #5A7EFC;        /* Azul primario vibrante */
+    --color-accent-green: #00C897;     /* Verde/Cian para acentos y hover */
+    --color-background-dark: #121212;  /* Fondo principal muy oscuro */
+    --color-surface-card: #1E1E1E;     /* Fondo de contenedores y tarjetas */
+    --color-surface-hover: #2A2A2A;    /* Tono de hover: más claro para efecto "lift" */
+    --color-text-primary: #E0E0E0;     /* Texto claro */
+    --color-text-secondary: #A0A0A0;   /* Texto secundario y mutado */
+
+    /* Tipografía */
+    --font-family-base: 'Inter', sans-serif;
+}
+
+/* Reset Básico y Estilos del Cuerpo */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.nosql-body {
+    font-family: var(--font-family-base);
+    background-color: var(--color-background-dark);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    transition: background-color 0.3s;
+}
+
+/* Contenedores Centrales */
+.nav-container,
+.hero-container,
+.intro-container,
+.features-container,
+.models-container,
+.resources-container,
+.page-header-container,
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos de Encabezados */
+h1, h2, h3 {
+    line-height: 1.25;
+    margin-bottom: 0.5em;
+    color: var(--color-text-primary);
+}
+
+/* =====================================================================
+   1. NAVEGACIÓN
+===================================================================== */
+
+.nav-main {
+    background-color: var(--color-surface-card);
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-main-blue);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-logo:hover {
+    color: var(--color-accent-green);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover, .nav-link-active {
+    color: var(--color-accent-green);
+    border-bottom: 2px solid var(--color-accent-green);
+}
+
+
+/* =====================================================================
+   2. SECCIÓN HERO Y HEADERS
+===================================================================== */
+
+.hero-section {
+    padding: 140px 0;
+    text-align: center;
+    background-color: var(--color-background-dark);
+}
+
+.hero-title, .page-header-title {
+    font-size: 3.8rem;
+    font-weight: 900;
+    margin-bottom: 25px;
+    /* Efecto de Gradiente en Texto */
+    background: linear-gradient(90deg, var(--color-main-blue), var(--color-accent-green));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle, .page-header-subtitle {
+    font-size: 1.4rem;
+    color: var(--color-text-secondary);
+    max-width: 900px;
+    margin: 0 auto 50px;
+}
+
+/* Header de páginas internas */
+.page-header-section {
+    padding: 80px 0 60px;
+    text-align: center;
+    background-color: var(--color-surface-card);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.page-header-title { font-size: 3.2rem; }
+
+
+/* Botón Principal de CTA */
+.hero-cta-button {
+    display: inline-block;
+    background-color: var(--color-main-blue);
+    color: var(--color-background-dark);
+    padding: 18px 40px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.15rem;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 6px 20px rgba(90, 126, 252, 0.4);
+}
+
+.hero-cta-button:hover {
+    background-color: #446ae0; /* Tono de azul más oscuro */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(90, 126, 252, 0.6);
+}
+
+
+/* =====================================================================
+   3. SECCIONES DE CONTENIDO (CARDS, MODELOS, CASOS)
+===================================================================== */
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.intro-title {
+    font-size: 2.2rem;
+    color: var(--color-accent-green);
+    margin-bottom: 20px;
+}
+
+/* Grid de Características y Modelos */
+.features-grid, .models-container, .provider-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.feature-card, .model-card, .provider-card {
+    background-color: var(--color-surface-card);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Efecto de iluminación en hover */
+.feature-card:hover, .model-card:hover, .provider-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--color-surface-hover);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-color: var(--color-main-blue);
+}
+
+.feature-icon-wrapper, .model-icon-wrapper {
+    color: var(--color-main-blue);
+    margin-bottom: 20px;
+}
+
+.feature-icon, .model-icon {
+    width: 45px;
+    height: 45px;
+}
+
+.model-title {
+    font-size: 1.5rem;
+    color: var(--color-accent-green);
+}
+
+.model-description strong, .model-use-case strong {
+    color: var(--color-main-blue);
+    font-weight: 600;
+}
+
+/* Variaciones de color de borde para Modelos */
+.model-document { border-left: 5px solid #FFB300; } /* Amarillo */
+.model-key-value { border-left: 5px solid #4CAF50; } /* Verde */
+.model-wide-column { border-left: 5px solid #03A9F4; } /* Azul claro */
+.model-graph { border-left: 5px solid #E91E63; } /* Rosa */
+
+/* Estilos de la tabla de comparación */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+}
+
+.comparison-table th {
+    background-color: var(--color-main-blue);
+    color: var(--color-background-dark);
+    padding: 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.comparison-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Efecto de iluminación en filas de tabla */
+.comparison-table tr:hover {
+    background-color: var(--color-surface-hover);
+}
+
+.sql-column { color: #FF7043; font-weight: 500; } /* Naranja para SQL */
+.nosql-column { color: var(--color-accent-green); font-weight: 500; } /* Verde para NoSQL */
+
+
+/* =====================================================================
+   4. SECCIÓN RECURSOS
+===================================================================== */
+
+.block-title {
+    font-size: 2rem;
+    color: var(--color-main-blue);
+    border-bottom: 2px solid var(--color-accent-green);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.provider-card .card-title {
+    font-size: 1.4rem;
+    color: var(--color-text-primary);
+}
+
+.provider-list-detail {
+    list-style: none;
+    padding: 0;
+}
+
+.provider-list-detail li {
+    background-color: var(--color-background-dark);
+    padding: 8px 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: var(--color-text-primary);
+}
+
+/* Glosario */
+.term-title {
+    font-size: 1.2rem;
+    color: var(--color-accent-green);
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+/* Enlaces Comunitarios */
+.community-link {
+    display: block;
+    background-color: var(--color-background-dark);
+    color: var(--color-main-blue);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+    text-align: center;
+}
+
+.community-link:hover {
+    background-color: var(--color-main-blue);
+    color: var(--color-background-dark);
+    transform: scale(1.01);
+}
+
+/* =====================================================================
+   5. PIE DE PÁGINA
+===================================================================== */
+
+.site-footer {
+    background-color: var(--color-surface-card);
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+
+/* =====================================================================
+   6. RESPONSIVE DESIGN
+===================================================================== */
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .page-header-title {
+        font-size: 2rem;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .comparison-table th, .comparison-table td {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos y Herramientas NoSQL</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="nosql-body">
+
+    <nav class="nav-main">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                &lt;NoSQL&gt; Docs
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Introducción</a>
+                <a href="modelos.html" class="nav-link">Modelos</a>
+                <a href="casos_de_uso.html" class="nav-link">Casos de Uso</a>
+                <a href="recursos.html" class="nav-link nav-link-active">Recursos</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="recursos-header" class="page-header-section">
+        <div class="page-header-container">
+            <h1 class="page-header-title">
+                Recursos Esenciales y Ecosistema NoSQL
+            </h1>
+            <p class="page-header-subtitle">
+                Guía rápida de las herramientas, proveedores y terminología clave para iniciar y profundizar en el desarrollo con bases de datos no relacionales.
+            </p>
+        </div>
+    </header>
+
+    <section id="recursos" class="resources-section section-padding">
+        <div class="resources-container">
+
+            <div class="resource-block provider-list">
+                <h2 class="block-title">Proveedores Líderes de Bases de Datos</h2>
+                <p class="block-intro">Una lista de las bases de datos más influyentes, categorizadas por su modelo de datos principal.</p>
+
+                <div class="provider-cards-grid">
+                    <article class="provider-card provider-document">
+                        <h3 class="card-title">Documental (JSON)</h3>
+                        <p class="card-description">Flexibilidad y desarrollo ágil.</p>
+                        <ul class="provider-list-detail">
+                            <li>MongoDB (Líder en uso general)</li>
+                            <li>Couchbase (Alto rendimiento, caching)</li>
+                            <li>DocumentDB (Compatible con MongoDB)</li>
+                        </ul>
+                    </article>
+
+                    <article class="provider-card provider-keyvalue">
+                        <h3 class="card-title">Clave-Valor</h3>
+                        <p class="card-description">Latencia mínima en operaciones simples.</p>
+                        <ul class="provider-list-detail">
+                            <li>Redis (In-Memory, caching y sesiones)</li>
+                            <li>Memcached (Sistema de caching distribuido)</li>
+                            <li>DynamoDB (Modelo clave-valor altamente escalable de AWS)</li>
+                        </ul>
+                    </article>
+
+                    <article class="provider-card provider-graph">
+                        <h3 class="card-title">Grafo</h3>
+                        <p class="card-description">Manejo eficiente de relaciones complejas.</p>
+                        <ul class="provider-list-detail">
+                            <li>Neo4j (Pionero y líder con lenguaje Cypher)</li>
+                            <li>JanusGraph (Open source, escalable)</li>
+                            <li>Amazon Neptune (Servicio de grafo gestionado)</li>
+                        </ul>
+                    </article>
+
+                    <article class="provider-card provider-column">
+                        <h3 class="card-title">Columna Ancha</h3>
+                        <p class="card-description">Escritura masiva y distribución geográfica.</p>
+                        <ul class="provider-list-detail">
+                            <li>Apache Cassandra (Escala lineal, alta disponibilidad)</li>
+                            <li>HBase (Basado en el concepto BigTable de Google)</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+
+            <div class="resource-block glossary-list">
+                <h2 class="block-title">Glosario de Terminología NoSQL</h2>
+                <dl class="glossary-items">
+                    <dt class="term-title">Modelo BASE</dt>
+                    <dd class="term-definition">
+                        Acrónimo de Basically Available, Soft State, Eventual Consistency. Es el modelo de garantías de datos preferido por muchos sistemas NoSQL, priorizando la disponibilidad y la tolerancia a particiones sobre la consistencia estricta.
+                    </dd>
+
+                    <dt class="term-title">Escalabilidad Horizontal</dt>
+                    <dd class="term-definition">
+                        Añadir más máquinas (nodos) a un clúster para distribuir la carga de datos y las operaciones, lo que permite manejar volúmenes de tráfico y almacenamiento masivos (escalado "out").
+                    </dd>
+
+                    <dt class="term-title">Desnormalización</dt>
+                    <dd class="term-definition">
+                        Estrategia de diseño en la que se duplican o anidan datos relacionados dentro de una única estructura (un documento o fila) para reducir la necesidad de realizar consultas de unión (`JOIN`), optimizando la velocidad de lectura.
+                    </dd>
+
+                    <dt class="term-title">TTL (Time To Live)</dt>
+                    <dd class="term-definition">
+                        Un mecanismo para que los datos caduquen automáticamente. Esencial en bases de datos Clave-Valor para gestionar el almacenamiento en caché y la limpieza automática de sesiones antiguas.
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="resource-block community-links">
+                <h2 class="block-title">Comunidad y Aprendizaje Adicional</h2>
+                <ul class="link-list">
+                    <li><a href="https://www.mongodb.com/docs/" target="_blank" class="community-link">Documentación Oficial de MongoDB</a></li>
+                    <li><a href="https://cassandra.apache.org/_/index.html" target="_blank" class="community-link">Tutoriales Avanzados de Apache Cassandra</a></li>
+                    <li><a href="https://neo4j.com/developer/get-started/" target="_blank" class="community-link">Guía para Empezar con Neo4j (Grafos)</a></li>
+                    <li><a href="https://redis.io/docs/" target="_blank" class="community-link">Estudios de Caso de Alto Rendimiento con Redis</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Guía NoSQL. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

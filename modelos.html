@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos de Bases de Datos NoSQL</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="nosql-body">
+
+    <nav class="nav-main">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                &lt;NoSQL&gt; Docs
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Introducción</a>
+                <a href="modelos.html" class="nav-link nav-link-active">Modelos</a>
+                <a href="casos_de_uso.html" class="nav-link">Casos de Uso</a>
+                <a href="recursos.html" class="nav-link">Recursos</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="modelos-header" class="page-header-section">
+        <div class="page-header-container">
+            <h1 class="page-header-title">
+                Los 4 Pilares de NoSQL: Diversidad y Propósito
+            </h1>
+            <p class="page-header-subtitle">
+                Cada modelo de datos NoSQL está diseñado para resolver un tipo específico de desafío, optimizando el rendimiento y la escalabilidad.
+            </p>
+        </div>
+    </header>
+
+    <section id="modelos-detalle" class="models-section section-padding">
+        <div class="models-container">
+            <article class="model-card model-document">
+                <div class="model-header">
+                    <h2 class="model-title">1. Bases de Datos Documentales</h2>
+                    <div class="model-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="model-icon"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M8 17h8"/><path d="M8 13h8"/></svg>
+                    </div>
+                </div>
+                <p class="model-description">
+                    <strong class="model-concept">Concepto:</strong> Almacenan datos en estructuras de documentos semiestructurados, comúnmente en formato **JSON** o BSON. Cada documento es auto-contenido y su estructura puede variar.
+                </p>
+                <p class="model-description">
+                    <strong class="model-strength">Fortaleza:</strong> Flexibilidad total del esquema. Son intuitivas para los desarrolladores porque el modelo de datos se mapea fácilmente a objetos de programación (POJOs, POPOs).
+                </p>
+                <p class="model-use-case">
+                    <strong class="model-use-title">Uso Ideal:</strong> Catálogos de productos, gestión de contenido (CMS), perfiles de usuario.
+                </p>
+            </article>
+
+            <article class="model-card model-key-value">
+                <div class="model-header">
+                    <h2 class="model-title">2. Bases de Datos Clave-Valor</h2>
+                    <div class="model-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="model-icon"><path d="M2 12s3-10 10-10 10 10 10 10-3 10-10 10-10-10-10-10z"/><circle cx="12" cy="12" r="3"/><path d="M2 12h5"/><path d="M17 12h5"/></svg>
+                    </div>
+                </div>
+                <p class="model-description">
+                    <strong class="model-concept">Concepto:</strong> El modelo más simple. Almacena datos como un gran diccionario o hash map, donde una clave única apunta a un valor (que puede ser simple o complejo).
+                </p>
+                <p class="model-description">
+                    <strong class="model-strength">Fortaleza:</strong> Velocidad y latencia extremadamente bajas (O(1)). Ideal para operaciones de lectura/escritura rápidas y simples.
+                </p>
+                <p class="model-use-case">
+                    <strong class="model-use-title">Uso Ideal:</strong> Caching de alto rendimiento, gestión de sesiones de usuario, carritos de compra.
+                </p>
+            </article>
+
+            <article class="model-card model-wide-column">
+                <div class="model-header">
+                    <h2 class="model-title">3. Bases de Datos de Columna Ancha</h2>
+                    <div class="model-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="model-icon"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+                    </div>
+                </div>
+                <p class="model-description">
+                    <strong class="model-concept">Concepto:</strong> Almacenan datos en "familias de columnas" en lugar de filas. Permiten una gran distribución y eficiencia para almacenar datos dispersos.
+                </p>
+                <p class="model-description">
+                    <strong class="model-strength">Fortaleza:</strong> Escalabilidad masiva para operaciones de escritura intensiva (Big Data). Alta disponibilidad y tolerancia a fallos en clústeres distribuidos.
+                </p>
+                <p class="model-use-case">
+                    <strong class="model-use-title">Uso Ideal:</strong> Almacenamiento de logs, telemetría (IoT), series temporales.
+                </p>
+            </article>
+
+            <article class="model-card model-graph">
+                <div class="model-header">
+                    <h2 class="model-title">4. Bases de Datos de Grafo</h2>
+                    <div class="model-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="model-icon"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 17H16"/><path d="M19 14v6"/></svg>
+                    </div>
+                </div>
+                <p class="model-description">
+                    <strong class="model-concept">Concepto:</strong> Almacenan datos como nodos (entidades) y bordes (relaciones). El foco principal es la conexión entre los datos.
+                </p>
+                <p class="model-description">
+                    <strong class="model-strength">Fortaleza:</strong> Consultas de relaciones complejas (ej: "amigo de un amigo") que son extremadamente lentas o imposibles en SQL.
+                </p>
+                <p class="model-use-case">
+                    <strong class="model-use-title">Uso Ideal:</strong> Redes sociales, sistemas de recomendación, detección de fraude.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="comparacion" class="comparison-section section-padding">
+        <div class="models-container">
+            <h2 class="intro-title" style="text-align: center;">Comparativa: SQL vs. NoSQL</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>SQL (Relacional)</th>
+                        <th>NoSQL (No Relacional)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Modelo de Datos</td>
+                        <td class="sql-column">Tablas fijas (filas y columnas).</td>
+                        <td class="nosql-column">Flexible (Documento, Clave-Valor, Grafo, etc.).</td>
+                    </tr>
+                    <tr>
+                        <td>Esquema</td>
+                        <td class="sql-column">Rígido (se define antes de escribir datos).</td>
+                        <td class="nosql-column">Dinámico (se define en la aplicación).</td>
+                    </tr>
+                    <tr>
+                        <td>Escalabilidad</td>
+                        <td class="sql-column">Vertical (aumentar potencia del servidor).</td>
+                        <td class="nosql-column">Horizontal (distribuir en múltiples servidores).</td>
+                    </tr>
+                    <tr>
+                        <td>Garantías (Teorema)</td>
+                        <td class="sql-column">ACID (Consistencia fuerte).</td>
+                        <td class="nosql-column">BASE (Disponibilidad y consistencia eventual).</td>
+                    </tr>
+                    <tr>
+                        <td>Mejor para...</td>
+                        <td class="sql-column">Transacciones financieras, datos estructurados.</td>
+                        <td class="nosql-column">Big Data, desarrollo ágil, datos no estructurados.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Guía NoSQL. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

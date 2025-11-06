@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casos de Uso Empresariales de Bases de Datos NoSQL</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="nosql-body">
+
+    <nav class="nav-main">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                &lt;NoSQL&gt; Docs
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Introducción</a>
+                <a href="modelos.html" class="nav-link">Modelos</a>
+                <a href="casos_de_uso.html" class="nav-link nav-link-active">Casos de Uso</a>
+                <a href="recursos.html" class="nav-link">Recursos</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="casos-header" class="page-header-section">
+        <div class="page-header-container">
+            <h1 class="page-header-title">
+                Aplicaciones y Casos de Uso Estratégicos de NoSQL
+            </h1>
+            <p class="page-header-subtitle">
+                Análisis de los escenarios empresariales donde la arquitectura NoSQL proporciona una ventaja competitiva en escalabilidad, latencia y gestión de Big Data.
+            </p>
+        </div>
+    </header>
+
+    <section id="usos" class="models-section section-padding">
+        <div class="models-container">
+
+            <article class="model-card model-graph-case model-graph">
+                <div class="model-header">
+                    <h2 class="model-title">1. Grafos y Mapeo de Relaciones (Detección de Fraude y Redes Sociales)</h2>
+                    <div class="model-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="model-icon"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 17H16"/><path d="M19 14v6"/></svg>
+                    </div>
+                </div>
+                <p class="model-description">
+                    <strong class="model-concept">Modelo Dominante:</strong> **Grafo** (ej: Neo4j, JanusGraph).
+                </p>
+                <p class="model-strength">
+                    **Análisis Profesional:** Las bases de datos de grafo están optimizadas para la **travesía de relaciones de múltiples saltos**, un proceso inherentemente ineficiente para los `JOIN` recursivos de SQL. Al modelar datos como nodos (entidades) y bordes (conexiones), permiten consultas en tiempo real sobre patrones de relación complejos.
+                </p>
+                <p class="model-use-case">
+                    <strong class="model-use-title">Aplicaciones Clave:</strong> Detección de anillos de fraude en seguros o banca, sistemas de recomendación con alta precisión (*people you may know*), y gestión de dependencias en infraestructuras complejas.
+                </p>
+            </article>
+
+            <article class="model-card model-key-value-case model-key-value">
+                <div class="model-header">
+                    <h2 class="model-title">2. Almacenamiento en Memoria y Caching (Latencia Crítica)</h2>
+                    <div class="model-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="model-icon"><path d="M13 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M10 17h4"/><path d="M10 13h4"/><path d="M14.4 4.1L2.4 16.1M17 7l4 4"/></svg>
+                    </div>
+                </div>
+                <p class="model-description">
+                    <strong class="model-concept">Modelo Dominante:</strong> **Clave-Valor** (ej: Redis, Memcached).
+                </p>
+                <p class="model-strength">
+                    **Análisis Profesional:** La simplicidad del modelo clave-valor permite operaciones de lectura y escritura a una velocidad cercana a O(1) (tiempo constante). Esto es vital para desacoplar el acceso a la base de datos principal y reducir la carga transaccional, garantizando un rendimiento ultra-rápido.
+                </p>
+                <p class="model-use-case">
+                    <strong class="model-use-title">Aplicaciones Clave:</strong> Almacenamiento de tokens de autenticación y sesiones (SSO), gestión de tablas de clasificación en juegos, y *caching* de objetos de alta demanda en arquitecturas de microservicios.
+                </p>
+            </article>
+
+            <article class="model-card model-document-case model-document">
+                <div class="model-header">
+                    <h2 class="model-title">3. Catálogos de E-commerce y Sistemas de Gestión de Contenido (CMS)</h2>
+                    <div class="model-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="model-icon"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+                    </div>
+                </div>
+                <p class="model-description">
+                    <strong class="model-concept">Modelo Dominante:</strong> **Documental** (ej: MongoDB, Couchbase).
+                </p>
+                <p class="model-strength">
+                    **Análisis Profesional:** La ausencia de esquema fijo (schemaless) y la capacidad de anidar datos (desnormalización) en documentos JSON son ideales para entornos de desarrollo ágil (DevOps). Esto permite que la capa de datos evolucione al ritmo de la aplicación sin migraciones o esquemas rígidos, crucial para catálogos con atributos de producto cambiantes.
+                </p>
+                <p class="model-use-case">
+                    <strong class="model-use-title">Aplicaciones Clave:</strong> Inventarios de comercio electrónico (donde los productos tienen estructuras variadas), gestión de contenido que requiere flexibilidad, y almacenamiento de perfiles de usuario complejos y dinámicos.
+                </p>
+            </article>
+
+            <article class="model-card model-wide-column-case model-wide-column">
+                <div class="model-header">
+                    <h2 class="model-title">4. Series Temporales, Logs de Eventos y Plataformas IoT</h2>
+                    <div class="model-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="model-icon"><rect x="2" y="7" width="20" height="10" rx="3"/><path d="M12 21v-2"/><path d="M12 17v-2"/><path d="M8 17v-2"/><path d="M16 17v-2"/></svg>
+                    </div>
+                </div>
+                <p class="model-description">
+                    <strong class="model-concept">Modelo Dominante:</strong> **Columna Ancha** (ej: Apache Cassandra, HBase).
+                </p>
+                <p class="model-strength">
+                    **Análisis Profesional:** Diseñadas para una escritura masiva y una distribución geográfica inherente. Este modelo sobresale en la agregación de datos y la búsqueda por clave de fila y rango de tiempo, lo que lo hace perfecto para escenarios donde la velocidad de ingesta (millones de eventos por segundo) es más crítica que la consistencia ACID.
+                </p>
+                <p class="model-use-case">
+                    <strong class="model-use-title">Aplicaciones Clave:</strong> Almacenamiento de logs de servidores distribuidos, recolección de métricas de sensores (IoT), y gestión de historiales de mensajes distribuidos a escala global.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Guía NoSQL. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
